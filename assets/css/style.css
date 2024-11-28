@@ -1,227 +1,238 @@
-body {
-    background: url('/assets/images/wither.jpg') center fixed;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
-    font-size: 16px;
-    color: #EBE2CA;
-    margin: 0px;
-    padding: 0px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2b2t.us.org</title>
+    <style>
+      /* General body styling */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #f0e4cc; /* Light cream text */
+        background: url('https://cdn.discordapp.com/attachments/872575896727482448/1311531000622485534/2024-11-27_21.15.25.png?ex=6749daad&is=6748892d&hm=c1ced5256ba59efecc0d532a0711f7c366d12286d5b1e493be2fb7463d4fea0c&') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      /* Title Bar */
+      .title-bar {
+        width: 100%;
+        padding: 50px 0 15px 0; /* Increased top padding */
+        text-align: center;
+        font-size: 7em; /* Increased font size */
+        font-weight: bold;
+        color: #f0e4cc; /* Light cream text */
+        text-shadow: 2px 2px 4px black;
+        letter-spacing: 2px;
+        margin-bottom: -10px; /* Negative margin to move closer to nav bar */
+        background: transparent;
+        cursor: pointer;
+      }
+
+      /* Navigation Bar */
+      .nav-bar {
+  width: 100%;
+  max-width: 1200px;
+  padding: 5px 5px; /* Reduced padding */
+  background: rgba(34, 34, 34, 0.8); /* Dark background with 70% opacity */
+  border: 1px solid #605c5c;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0 auto 10px auto; /* Reduced margin */
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  box-sizing: border-box;
 }
 
-.holder {
-    width: 990px;
-    margin: 3% auto;
-}
 
-.header {
-    height: 100px;
-    charset=utf-8;
-}
+      .nav-bar a {
+        color: #f0e4cc; /* Light cream links */
+        text-decoration: none;
+        margin: 0 8px; /* Reduced spacing between links */
+        transition: color 0.3s ease;
+      }
 
-.logo {
-    /* font-size: 90px;
-    font-weight: bold;
-    color: #f2f2f2;
-    text-shadow: 2px 2px 10px #4d4d4d; */
-    /* margin-bottom: -15px; */
-    padding: -20px;
-}
+      .nav-bar a:hover {
+        color: #f1c40f;
+      }
 
-.sub {
-    font-size: 16px;
-    font-weight: bold;
-    color: #f2f2f2;
-    text-shadow: 1px 2px 10px #000000;
-    margin: 0px 0px 15px 45px;
-}
+      /* Main container for layout */
+      .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px; /* Reduced padding */
+        gap: 15px; /* Reduced gap between sections */
+        box-sizing: border-box;
+      }
 
-.container {
-    background-color: rgb(51, 64, 81);
-    background-color: rgba(40, 42, 46, 1);
-    border: 1px #5C5C5C solid;
-    padding: 10px;
-    float: left;
-    -moz-box-shadow: 1px 2px 10px #000000;
-    -webkit-box-shadow: 1px 2px 10px #000000;
-    box-shadow: 1px 2px 10px #000000;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-    .containerChat {
-    background-color: rgb(51, 64, 81);
-    background-color: rgba(40, 42, 46, 1);
-    border: 1px #5C5C5C solid;
-    padding: 10px;
-    float: left;
-    -moz-box-shadow: 1px 2px 10px #000000;
-    -webkit-box-shadow: 1px 2px 10px #000000;
-    box-shadow: 1px 2px 10px #000000;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    charset=utf-8
-}
+      /* Sidebar and Main Sections */
+      .left, .middle, .right {
+        border: 1px solid #605c5c;
+        border-radius: 6px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      }
 
-.navigation {
-    background-color: rgb(51, 64, 81);
-    background-color: rgba(40, 42, 46, 1);
-    border: 1px #5C5C5C solid;
-    padding: 2px 5px;
-    -moz-box-shadow: 1px 2px 10px #000000;
-    -webkit-box-shadow: 1px 2px 10px #000000;
-    box-shadow: 1px 2px 10px #000000;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;		
-    text-align: center;
-    margin: 10px auto;
-    width: 968px;
-}
+      .left {
+        width: 15%;
+        min-height: 400px;
+        padding: 10px; /* Reduced padding */
+        text-align: center;
+        line-height: 1.4;
+        background: rgba(20, 20, 20, 0.6); /* 50% opaque */
+      }
 
-.con1 {
-    text-align: center;
-}
+      .middle {
+        flex: 1;
+        min-height: 600px;
+        padding: 15px; /* Reduced padding */
+        line-height: 1.4;
+        background: #282a2e; /* 60% opaque */
+      }
 
-.con1, .con3 {
-    width: 150px;
-    margin: 0px 6px;
-    height: 555px;
-}
+      .right {
+        width: 15%;
+        min-height: 400px;
+        padding: 10px; /* Reduced padding */
+        text-align: center;
+        line-height: 1.4;
+        background: rgba(20, 20, 20, 0.6); /* 50% opaque */
+      }
 
-.con2 {
-    width: 780px;
-    height: 555px;
-}
+      .right a {
+        color: #f0e4cc; /* Light cream links */
+        text-decoration: none;
+        font-weight: bold;
+      }
 
-.post-header {
-    font-size: 20px;
-    font-weight: 800;
-}
+      .right a:hover {
+        color: #f1c40f;
+      }
 
-.post-content {
-    margin: 5px 5px 5px;
-}
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin: 10px auto; /* Reduced margin */
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.9);
+        color: #f0e4cc; /* Light cream text */
+        font-size: 0.8em;
+        width: 100%;
+      }
 
-#wrapper {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-}
+      h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        color: #f0e4cc; /* Light cream text */
+      }
 
-#mask {
-    width:500%;
-}
+      p {
+        margin: 8px 0;
+        font-size: 0.9em;
+        color: #f0e4cc; /* Light cream text */
+      }
 
-.item {
-    width: 20%;
-    height: 100%;
-    float: left;
-}
+      /* IP Copied Message */
+      .ip-copied {
+        display: none;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #f0e4cc;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        transition: opacity 1s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Title Bar -->
+    <div class="title-bar" onclick="copyIP()">2B2T.US.ORG</div>
 
-.clear {
-    clear: both;
-}
+    <!-- Navigation Bar -->
+    <div class="container">
+      <div class="nav-bar">
+        <a href="https://discord.gg/nWyZnbC3dY" target="_blank">Discord</a> > 
+        <a href="https://www.reddit.com/r/2b2tus/" target="_blank">Reddit</a>
+      </div>
+    </div>
 
-.donationspace{
-    height: 5px;
-}
+    <!-- Main Layout -->
+    <div class="container">
+      <!-- Left Sidebar -->
+      <div class="left">
+        <p>I pay for 2b2t America myself, but donations are greatly appreciated. We need 45$ per month to keep the server running.</p>
+        <p><p>
+        <p>Once the server eventually dies, the world will be released as a torrent.<p>
+        <p><p>
+        <p>No bullshit included in donations needed, exact prices and information written out in the 'info' section. no one is profiting from this.<p>
+        <p><p>
+        <p>It is possible to be 'rewarded' for donations. (email me at 2b2t.us.org@gmail.com your Minecraft IGN for permanent priority queue status for $5)</p>
+        <button>Donate Now</button>
+      </div>
 
-.donatebutton{
-    background:rgba(40, 42, 46, 1);
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px #5C5C5C solid;
-}
+      <!-- Middle Section -->
+      <div class="middle">
+        <h3>2b2t.us.org</h3>
+        <p>2biggots2tyrants is a minecraft server that promises its players vanilla survival gameplay with PvP, a neverending world and no rules. The IP is 2b2t.us.org. It has been on the same world since november 2024. </p>
+        <h3>News</h3>
+        <p><strong>Latest Update:</strong> New website is open..</p>
+      </div>
+      
 
-.spacer0{
-    height: 5px;
-}
+      <!-- Right Sidebar -->
+      <div class="right">
+        <h3></h3>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
 
-.spacer {
-    height: 10px;
-}
+    <!-- IP Copied Message -->
+    <div id="ip-copied" class="ip-copied">IP Copied!</div>
 
-.spacer2 {
-    height: 60px;
-}
+    <!-- Player Count Script -->
+    <script>
+      const apiURL = "https://api.mcsrvstat.us/2/2b2t.us.org"; // Replace with your API or server IP
 
-.spacer3 {
-    height: 40px;
-}
+      async function fetchPlayerCount() {
+        try {
+          const response = await fetch(apiURL);
+          const data = await response.json();
+          const playerCount = data.players ? data.players.online : "Unavailable";
+          document.getElementById("player-count").textContent = playerCount;
+        } catch (error) {
+          document.getElementById("player-count").textContent = "Error fetching player count.";
+          console.error("Error fetching player count:", error);
+        }
+      }
 
-.spacer4 {
-    height: 140px;
-}
+      fetchPlayerCount();
 
-.spacer5 {
-    height: 110px;
-}
+      // Function to copy IP and show message
+      function copyIP() {
+        const ip = "2b2t.us.org";
+        navigator.clipboard.writeText(ip).then(() => {
+          const ipCopiedElement = document.getElementById("ip-copied");
+          ipCopiedElement.style.display = "block";
+          ipCopiedElement.style.opacity = 1;
 
-.spacer6 {
-    height: 100px;
-}
-
-.spacer7{ 
-    height: 20px;
-}
-
-.spacer8{ 
-    height: 15px;
-}
-
-.spacer9{ 
-    height: 70px;
-}
-
-.spacer10{ 
-    height: 160px;
-}
-
-.spacer11{ 
-    height: 440px;
-}
-
-.spacer12{ 
-    height: 120px;
-}
-
-.selected {
-    font-size: 16px;
-    color: #7c7b76;
-}
-
-.raquo {
-    vertical-align: 11%;
-}
-
-img {
-    border: 0;
-}
-
-a {
-    text-decoration: none;
-    color: #EBE2CA;
-    font-weight: bold;
-}	
-
-a:hover {
-    text-shadow: 1px 1px 1px #3f3f3f;
-    color: #EBE2CA;
-}
-
-.logo a:hover {
-    text-shadow: 3px 3px 3px #3f3f3f;
-    color: #EBE2CA;
-}
-
-.news {
-    background: #850000;
-    width: 760px;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fcc;
-}
+          // Fade out after 2 seconds
+          setTimeout(() => {
+            ipCopiedElement.style.opacity = 0;
+            setTimeout(() => {
+              ipCopiedElement.style.display = "none";
+            }, 1000);
+          }, 2000);
+        }).catch((err) => {
+          console.error("Error copying text: ", err);
+        });
+      }
+    </script>
+  </body>
+</html>
